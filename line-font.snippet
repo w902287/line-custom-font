@@ -1,11 +1,10 @@
 #!name = LINE 自定義字型替換 (浪漫雅圓)
-#!desc = 將 LINE 官方下載的字型替換為自定義「浪漫雅圓」字體 (直鏈高速 CDN)
+#!desc = 攔截 LINE 官方字型下載並注入自定義浪漫雅圓 (含通知與日誌)
 #!openUrl = https://github.com/w902287/line-custom-font
 #!author = w902287
 
 [mitm]
-hostname = talk-asset.line-scdn.net
+hostname = talk-asset.line-scdn.net, *.line-scdn.net
 
 [rewrite_remote]
-# 匹配 LINE 官方字型下載請求，302 重定向到直鏈 CDN (避免 GitHub Release 二次跳轉)
-^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/TT07-armochih32c90b5_md_scale\.zip url 302 https://raw.githubusercontent.com/w902287/line-custom-font/main/TT07-armochih32c90b5_md_scale.zip
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/main/line-font-sync.js, requires-body=1, binary-body-mode=1
