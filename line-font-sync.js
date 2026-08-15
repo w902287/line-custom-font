@@ -1,20 +1,17 @@
 /**
- * LINE Custom Font Body Injector for Quantumult X
- * 支持通知與零跳轉二進位注入
+ * LINE Custom Font Local Injector for Quantumult X
+ * 直接覆蓋 Response Body，支援本地二進位緩存
  */
 const FONT_URL = "https://raw.githubusercontent.com/w902287/line-custom-font/main/TT07-armochih32c90b5_md_scale.zip";
 
 console.log("[LINE-Font] 攔截到字型下載請求：" + $request.url);
 
-$notify("LINE 字型替換", "浪漫雅圓注入中", "正在從 GitHub 獲取自定義字型包...");
-
 $task.fetch({
     url: FONT_URL,
     method: "GET"
 }).then(response => {
-    console.log("[LINE-Font] 成功從 GitHub 下載字型，大小：" + (response.bodyBytes ? response.bodyBytes.length : (response.body ? response.body.length : 0)) + " bytes");
-    $notify("LINE 字型替換", "浪漫雅圓注入成功！", "已成功替換官方字型包，請點擊套用。");
-    
+    console.log("[LINE-Font] 下載成功，返回字型數據！");
+    $notify("LINE 字型替換", "浪漫雅圓注入成功", "已替換為浪漫雅圓，請點擊套用！");
     $done({
         status: "HTTP/1.1 200 OK",
         headers: {
@@ -27,7 +24,7 @@ $task.fetch({
         body: response.body
     });
 }, reason => {
-    console.log("[LINE-Font] 下載失敗：" + reason.error);
-    $notify("LINE 字型替換", "下載失敗", reason.error || "網路連線異常");
+    console.log("[LINE-Font] 下載失敗：" + JSON.stringify(reason));
+    $notify("LINE 字型替換", "下載失敗", reason.error || "網路異常");
     $done({});
 });
