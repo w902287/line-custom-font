@@ -1,0 +1,8 @@
+# LINE 字型本地内嵌基准 v4（官方原包）
+# ZIP 已内嵌在脚本资源：运行时无 CDN、无 $task.fetch、无 302
+
+[rewrite_local]
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url script-echo-response https://raw.githubusercontent.com/w902287/line-custom-font/main/line-font-embedded-official-v4.js
+
+[mitm]
+hostname = talk-asset.line-scdn.net
