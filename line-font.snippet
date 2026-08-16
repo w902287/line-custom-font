@@ -1,8 +1,8 @@
-# LINE 自定義字型替換 (浪漫雅圓)
-# 採用 200 OK 二進位注入 (解決 LINE 不支援 302 跳轉問題)
+# LINE 自定義字型替換 (浪漫雅圓 2.04MB 精選版)
+# 採用 200 OK 二進位注入 (保證 100% 完整下載)
 
 [rewrite_local]
-^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/main/line-font-sync.js
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/e8aaad552fb0327f311d95368ca1160352ef29dc/line-font-sync.js
 
 [mitm]
 hostname = talk-asset.line-scdn.net
