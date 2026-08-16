@@ -1,0 +1,9 @@
+# LINE 浪漫雅圆 iCloud 本地注入 v7（真正自定义字型）
+# ZIP：iCloud Drive/Quantumult X/Data/LINE-font-romantic-v7.zip
+# 官方容器结构＋8,976 个浪漫雅圆字形；精确 2,611,063 bytes
+
+[rewrite_local]
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url script-echo-response https://raw.githubusercontent.com/w902287/line-custom-font/0584c3b/line-font-romantic-v7.js
+
+[mitm]
+hostname = talk-asset.line-scdn.net
