@@ -1,0 +1,9 @@
+# LINE 字型 QX Data 本地回显基准 v5（官方原包）
+# 使用前须将 LINE-font-official-baseline.zip 放入 Quantumult X 的 Data 目录
+# 无脚本、无 CDN、无 $task.fetch、无 302、无 response-body 缓冲
+
+[rewrite_local]
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url echo-response application/zip\r\nAccept-Ranges:\ bytes echo-response LINE-font-official-baseline.zip
+
+[mitm]
+hostname = talk-asset.line-scdn.net
