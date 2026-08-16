@@ -1,0 +1,8 @@
+# LINE 字型傳輸基準 v3：QX 內部直連官方原包
+# 無 $task.fetch、無 response-body 緩衝、無 302 回傳給 LINE
+
+[rewrite_local]
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url script-request-header https://raw.githubusercontent.com/w902287/line-custom-font/de79510093c0c9b7692991f1de1fd9ea9bb0675c/line-font-direct.js
+
+[mitm]
+hostname = talk-asset.line-scdn.net
