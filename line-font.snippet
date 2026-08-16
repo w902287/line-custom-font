@@ -1,3 +1,8 @@
 # LINE 自定義字型替換 (浪漫雅圓)
+# 支援 iOS LINE 字型下載替換
 
-^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url 302 https://raw.githubusercontent.com/w902287/line-custom-font/main/TT07-armochih32c90b5_md_scale.zip
+[rewrite_local]
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url 302 https://github.com/w902287/line-custom-font/releases/download/v1.0.0/TT07-armochih32c90b5_md_scale.zip
+
+[mitm]
+hostname = talk-asset.line-scdn.net
