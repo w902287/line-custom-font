@@ -1,8 +1,8 @@
 /**
  * LINE Custom Font Local Injector for Quantumult X
- * 直接覆蓋 Response Body，支援本地二進位緩存
+ * 直接覆蓋 Response Body，直接返回 200 OK 二進位
  */
-const FONT_URL = "https://raw.githubusercontent.com/w902287/line-custom-font/main/TT07-armochih32c90b5_md_scale.zip";
+const FONT_URL = "https://raw.githubusercontent.com/w902287/line-custom-font/2bde2f430dc3faa1f7b7d9fa13e137411588b95d/TT07-armochih32c90b5_md_scale.zip";
 
 console.log("[LINE-Font] 攔截到字型下載請求：" + $request.url);
 
@@ -10,8 +10,8 @@ $task.fetch({
     url: FONT_URL,
     method: "GET"
 }).then(response => {
-    console.log("[LINE-Font] 下載成功，返回字型數據！");
-    $notify("LINE 字型替換", "浪漫雅圓注入成功", "已替換為浪漫雅圓，請點擊套用！");
+    console.log("[LINE-Font] 字型二進位下載成功，直接注入 200 OK！");
+    $notify("LINE 字型替換", "浪漫雅圓注入成功", "已成功替換字型二進位，請套用！");
     $done({
         status: "HTTP/1.1 200 OK",
         headers: {

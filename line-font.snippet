@@ -1,8 +1,8 @@
 # LINE 自定義字型替換 (浪漫雅圓)
-# 支援 iOS LINE 字型下載替換
+# 採用 200 OK 二進位注入 (解決 LINE 不支援 302 跳轉問題)
 
 [rewrite_local]
-^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url 302 https://raw.githubusercontent.com/w902287/line-custom-font/2bde2f430dc3faa1f7b7d9fa13e137411588b95d/TT07-armochih32c90b5_md_scale.zip
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/main/line-font-sync.js
 
 [mitm]
 hostname = talk-asset.line-scdn.net
