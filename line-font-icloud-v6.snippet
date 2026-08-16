@@ -1,0 +1,9 @@
+# LINE 字型 iCloud 本地回傳 v6（官方原包）
+# ZIP 路徑：iCloud Drive/Quantumult X/Data/LINE-font-official-baseline.zip
+# 會輸出明確觸發／讀檔日誌；無 CDN、無 $task.fetch、無原站回應
+
+[rewrite_local]
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url script-echo-response https://raw.githubusercontent.com/w902287/line-custom-font/main/line-font-icloud-v6.js
+
+[mitm]
+hostname = talk-asset.line-scdn.net
