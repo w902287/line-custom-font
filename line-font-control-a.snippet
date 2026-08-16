@@ -1,0 +1,9 @@
+# LINE 字型 Control A：TTF 为成功官方原档，只改 ZIP 时间戳 2 秒
+# 用于判断 LINE 是否校验整份 ZIP 哈希
+# ZIP：iCloud Drive/Quantumult X/Data/LINE-font-control-A-zipmeta.zip
+
+[rewrite_local]
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/[^\/]+\/.*\.zip url script-echo-response https://raw.githubusercontent.com/w902287/line-custom-font/9ff6cf9/line-font-control-a.js
+
+[mitm]
+hostname = talk-asset.line-scdn.net
