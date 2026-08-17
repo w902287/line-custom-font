@@ -1,0 +1,10 @@
+# LINE 浪漫雅圓 v10：完整 22,026 glyph 字庫＋Thrift SHA-256 聯動
+# Quantumult X/Data 必須放入：LINE-font-romantic-v10-full.zip
+# 舊 v9 請停用，只保留 v10。
+
+[rewrite_local]
+^https?:\/\/(?:legy|legy-backup)\.line-apps\.com(?::443)?\/EXT\/talk\/asset-meta-server\/thrift\/fontService(?:\?.*)?$ url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/054c91d/line-font-romantic-v10-meta.js
+^https?:\/\/talk-asset\.line-scdn\.net(?::443)?\/secure\/119ae2b9-ed0e-49ed-8b9b-a013918b81b7\/TT07-armochih32c90b5_md_scale\.zip(?:\?.*)?$ url script-echo-response https://raw.githubusercontent.com/w902287/line-custom-font/054c91d/line-font-romantic-v10-zip.js
+
+[mitm]
+hostname = legy.line-apps.com, legy-backup.line-apps.com, talk-asset.line-scdn.net
