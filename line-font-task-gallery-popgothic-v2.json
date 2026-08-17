@@ -1,0 +1,10 @@
+{
+  "name": "LINE 雙欄字型選擇器 v2（Pop Gothic）",
+  "description": "新版：已將過大的內海字體改為 Pop Gothic CJK TC Bold。四組為浪漫雅圓/Pop Gothic × Yozai/台北黑體。",
+  "task": [
+    "0 0 * * * https://raw.githubusercontent.com/w902287/line-custom-font/0e47c9c/line-font-dual-select.js#combo=ry, tag=① 浪漫雅圓 ＋ Yozai, img-url=textformat.alt.system, enabled=false",
+    "0 0 * * * https://raw.githubusercontent.com/w902287/line-custom-font/0e47c9c/line-font-dual-select.js#combo=rt, tag=② 浪漫雅圓 ＋ 台北黑體, img-url=textformat.alt.system, enabled=false",
+    "0 0 * * * https://raw.githubusercontent.com/w902287/line-custom-font/0e47c9c/line-font-dual-select.js#combo=py, tag=③ Pop Gothic ＋ Yozai, img-url=textformat.alt.system, enabled=false",
+    "0 0 * * * https://raw.githubusercontent.com/w902287/line-custom-font/0e47c9c/line-font-dual-select.js#combo=pt, tag=④ Pop Gothic ＋ 台北黑體, img-url=textformat.alt.system, enabled=false"
+  ]
+}
