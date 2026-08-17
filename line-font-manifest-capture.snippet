@@ -1,0 +1,9 @@
+# LINE 字型清单诊断（不替换内容，仅旁路捕获）
+# 操作前请停用所有旧 LINE 字型替换模组，然后打开字体页并重新下载一次。
+
+[rewrite_local]
+^https?:\/\/[^\/]*(?:line\.me|line-apps\.com|line-scdn\.net|line\.naver\.jp)\/.* url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/6c80658/line-font-manifest-capture.js
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/.* url script-request-header https://raw.githubusercontent.com/w902287/line-custom-font/6c80658/line-font-request-log.js
+
+[mitm]
+hostname = *.line.me, *.line-apps.com, *.line-scdn.net, *.line.naver.jp, talk-asset.line-scdn.net
