@@ -1,0 +1,35 @@
+{
+  "yozai": {
+    "label": "Yozai Medium",
+    "source": "Yozai-Medium.ttf",
+    "file": "LINE-font-slot2-yozai.zip",
+    "ttf_size": 15238628,
+    "size": 9778405,
+    "sha256": "90898425c49d9ae260ad5c807609291c4713c92371e1ce3df158fbca43676cb0",
+    "md5": "6bb591b541a61b830026524783f2f5b0",
+    "glyphs": 25801,
+    "unicode": 26006
+  },
+  "naikai": {
+    "label": "內海字體 Bold",
+    "source": "NaikaiFont-Bold.ttf",
+    "file": "LINE-font-slot2-naikai.zip",
+    "ttf_size": 38609172,
+    "size": 23505402,
+    "sha256": "ed7da07b488e6ee632e591ffdff862509a1e69e821cadbf9b54abbbd2d05bb55",
+    "md5": "d666b7659369fed1abdda9dd3dec1931",
+    "glyphs": 49913,
+    "unicode": 49618
+  },
+  "taipei": {
+    "label": "台北黑體 Bold",
+    "source": "TaipeiSansTCBeta-Bold_1.ttf",
+    "file": "LINE-font-slot2-taipei.zip",
+    "ttf_size": 21736584,
+    "size": 11214470,
+    "sha256": "7de371a1c7dc6a756525635fb177a87382daef04f6d737cc48c5b87db659a119",
+    "md5": "adf0d8e32ad1f90ea1e7b3cf4c208b5c",
+    "glyphs": 32807,
+    "unicode": 32732
+  }
+}

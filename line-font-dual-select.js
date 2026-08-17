@@ -1,0 +1,27 @@
+/** LINE dual-slot font selector — invoked through QX event-interaction actions. */
+const KEY="line.custom.font.combo";
+const choices={
+  ry:{title:"浪漫雅圓 ＋ Yozai Medium",slot1:"浪漫雅圓",slot2:"Yozai Medium"},
+  rt:{title:"浪漫雅圓 ＋ 台北黑體 Bold",slot1:"浪漫雅圓",slot2:"台北黑體 Bold"},
+  ny:{title:"內海字體 Bold ＋ Yozai Medium",slot1:"內海字體 Bold",slot2:"Yozai Medium"},
+  nt:{title:"內海字體 Bold ＋ 台北黑體 Bold",slot1:"內海字體 Bold",slot2:"台北黑體 Bold"}
+};
+try{
+  const source=($environment&&$environment.sourcePath)||"";
+  const m=source.match(/(?:#|&)combo=(ry|rt|ny|nt)(?:&|$)/);
+  const selected=m?m[1]:null;
+  if(!selected||!choices[selected]){
+    const current=$prefs.valueForKey(KEY)||"ry",c=choices[current];
+    $done({title:"LINE 雙欄字型",htmlMessage:`<p style="font-family:-apple-system;text-align:center;font-size:18px">目前組合<br><b>${c.title}</b></p>`});
+  }else{
+    const previous=$prefs.valueForKey(KEY)||"ry",p=choices[previous]||choices.ry;
+    const ok=$prefs.setValueForKey(selected,KEY),c=choices[selected];
+    const changed=[];
+    if(p.slot1!==c.slot1)changed.push(`白玉欄：${p.slot1} → ${c.slot1}`);
+    if(p.slot2!==c.slot2)changed.push(`芫荽欄：${p.slot2} → ${c.slot2}`);
+    const action=changed.length?`約 64 秒後只刪除並重下載變動欄位：${changed.join("；")}`:"組合沒有改變，不需重新下載。";
+    console.log(`[LINE-Font-Dual] previous=${previous} selected=${selected} saved=${ok}`);
+    $notify("LINE 雙欄字型已切換",c.title,action);
+    $done({title:"切換完成",htmlMessage:`<p style="font-family:-apple-system;text-align:center;font-size:18px"><b>${c.title}</b><br><br>白玉書體 → ${c.slot1}<br>芫荽 → ${c.slot2}<br><br>${action}</p>`});
+  }
+}catch(e){console.log("[LINE-Font-Dual] select error "+String(e));$done();}
