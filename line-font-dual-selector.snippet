@@ -2,20 +2,20 @@
 # 預設組合：浪漫雅圓＋Yozai Medium
 # Quantumult X/Data 必須放入四個 ZIP：
 # LINE-font-romantic-v10-full.zip
-# LINE-font-slot1-naikai.zip
+# LINE-font-slot1-popgothic.zip
 # LINE-font-slot2-yozai.zip
 # LINE-font-slot2-taipei.zip
 # 舊浪漫雅圓 v9/v10 單字型模組必須停用，只保留本模組。
 
 [rewrite_local]
-^https?:\/\/(?:legy|legy-backup)\.line-apps\.com(?::443)?\/EXT\/talk\/asset-meta-server\/thrift\/fontService(?:\?.*)?$ url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/d9c5ca5/line-font-dual-meta.js
-^https?:\/\/talk-asset\.line-scdn\.net(?::443)?\/secure\/(?:119ae2b9-ed0e-49ed-8b9b-a013918b81b7\/TT07-armochih32c90b5_md_scale\.zip|39ec0b51-c99e-4273-8936-99aff142b47d\/Iansui-ForLINE%20(?:\(1\)|%281%29)\.zip)(?:\?.*)?$ url script-echo-response https://raw.githubusercontent.com/w902287/line-custom-font/5b28f70/line-font-dual-zip.js
+^https?:\/\/(?:legy|legy-backup)\.line-apps\.com(?::443)?\/EXT\/talk\/asset-meta-server\/thrift\/fontService(?:\?.*)?$ url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/0e47c9c/line-font-dual-meta.js
+^https?:\/\/talk-asset\.line-scdn\.net(?::443)?\/secure\/(?:119ae2b9-ed0e-49ed-8b9b-a013918b81b7\/TT07-armochih32c90b5_md_scale\.zip|39ec0b51-c99e-4273-8936-99aff142b47d\/Iansui-ForLINE%20(?:\(1\)|%281%29)\.zip)(?:\?.*)?$ url script-echo-response https://raw.githubusercontent.com/w902287/line-custom-font/0e47c9c/line-font-dual-zip.js
 
 [task_local]
-0 0 31 2 * https://raw.githubusercontent.com/w902287/line-custom-font/2391401/line-font-dual-select.js#combo=ry, tag=① 浪漫雅圓 ＋ Yozai, img-url=textformat.alt.system, enabled=true
-0 0 31 2 * https://raw.githubusercontent.com/w902287/line-custom-font/2391401/line-font-dual-select.js#combo=rt, tag=② 浪漫雅圓 ＋ 台北黑體, img-url=textformat.alt.system, enabled=true
-0 0 31 2 * https://raw.githubusercontent.com/w902287/line-custom-font/2391401/line-font-dual-select.js#combo=ny, tag=③ 內海字體 ＋ Yozai, img-url=textformat.alt.system, enabled=true
-0 0 31 2 * https://raw.githubusercontent.com/w902287/line-custom-font/2391401/line-font-dual-select.js#combo=nt, tag=④ 內海字體 ＋ 台北黑體, img-url=textformat.alt.system, enabled=true
+0 0 31 2 * https://raw.githubusercontent.com/w902287/line-custom-font/0e47c9c/line-font-dual-select.js#combo=ry, tag=① 浪漫雅圓 ＋ Yozai, img-url=textformat.alt.system, enabled=true
+0 0 31 2 * https://raw.githubusercontent.com/w902287/line-custom-font/0e47c9c/line-font-dual-select.js#combo=rt, tag=② 浪漫雅圓 ＋ 台北黑體, img-url=textformat.alt.system, enabled=true
+0 0 31 2 * https://raw.githubusercontent.com/w902287/line-custom-font/0e47c9c/line-font-dual-select.js#combo=py, tag=③ Pop Gothic ＋ Yozai, img-url=textformat.alt.system, enabled=true
+0 0 31 2 * https://raw.githubusercontent.com/w902287/line-custom-font/0e47c9c/line-font-dual-select.js#combo=pt, tag=④ Pop Gothic ＋ 台北黑體, img-url=textformat.alt.system, enabled=true
 
 [mitm]
 hostname = legy.line-apps.com, legy-backup.line-apps.com, talk-asset.line-scdn.net
