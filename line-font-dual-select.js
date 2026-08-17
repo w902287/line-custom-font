@@ -7,9 +7,11 @@ const choices={
   nt:{title:"內海字體 Bold ＋ 台北黑體 Bold",slot1:"內海字體 Bold",slot2:"台北黑體 Bold"}
 };
 try{
-  const source=($environment&&$environment.sourcePath)||"";
+  const env=(typeof $environment!=="undefined"&&$environment)||{};
+  const source=env.sourcePath||"";
+  const direct=env.variables&&env.variables.combo;
   const m=source.match(/(?:#|&)combo=(ry|rt|ny|nt)(?:&|$)/);
-  const selected=m?m[1]:null;
+  const selected=direct||(m?m[1]:null);
   if(!selected||!choices[selected]){
     const current=$prefs.valueForKey(KEY)||"ry",c=choices[current];
     $done({title:"LINE 雙欄字型",htmlMessage:`<p style="font-family:-apple-system;text-align:center;font-size:18px">目前組合<br><b>${c.title}</b></p>`});
