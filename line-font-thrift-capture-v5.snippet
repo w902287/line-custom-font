@@ -1,0 +1,9 @@
+# LINE Premium Font Thrift 精准捕获 v5
+# 仅匹配字体专用 RPC，不捕获聊天、好友或其他 LINE 内容。
+
+[rewrite_local]
+^https?:\/\/(?:legy|legy-backup)\.line-apps\.com\/EXT\/talk\/asset-meta-server\/thrift\/fontService(?:\?.*)?$ url script-request-body https://raw.githubusercontent.com/w902287/line-custom-font/0afb61b/line-font-thrift-request-capture.js
+^https?:\/\/(?:legy|legy-backup)\.line-apps\.com\/EXT\/talk\/asset-meta-server\/thrift\/fontService(?:\?.*)?$ url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/0afb61b/line-font-thrift-response-capture.js
+
+[mitm]
+hostname = legy.line-apps.com, legy-backup.line-apps.com
