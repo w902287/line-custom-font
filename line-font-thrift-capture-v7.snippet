@@ -1,0 +1,8 @@
+# LINE Premium Font Thrift 捕获 v7（最终修正版）
+# 修正 :443；单个 response 回调同时保存请求/响应，避免重复规则冲突。
+
+[rewrite_local]
+^https?:\/\/(?:legy|legy-backup)\.line-apps\.com(?::443)?\/EXT\/talk\/asset-meta-server\/thrift\/fontService(?:\?.*)?$ url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/adbeb16/line-font-thrift-exchange-v7.js
+
+[mitm]
+hostname = legy.line-apps.com, legy-backup.line-apps.com
