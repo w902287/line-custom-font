@@ -1,0 +1,8 @@
+# LINE 字型响应头／清单诊断 v2（完全透传，不修改响应）
+# 捕获 secure ZIP 的 ETag、Range、状态码及候选清单；不重复保存 2.61MB ZIP。
+
+[rewrite_local]
+^https?:\/\/[^\/]*(?:line\.me|line-apps\.com|line-scdn\.net|line\.naver\.jp)\/.* url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/90b7f2f/line-font-manifest-capture-v2.js
+
+[mitm]
+hostname = *.line.me, *.line-apps.com, *.line-scdn.net, *.line.naver.jp, talk-asset.line-scdn.net
