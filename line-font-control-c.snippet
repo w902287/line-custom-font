@@ -1,0 +1,8 @@
+# LINE 字型 Control C：ZIP 只改 2 bytes，但响应 ETag 伪装为官方原值
+# 使用既有 Data/LINE-font-control-A-zipmeta.zip
+
+[rewrite_local]
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/.*\.zip(?:\?.*)?$ url script-echo-response https://raw.githubusercontent.com/w902287/line-custom-font/267a0c9/line-font-control-c.js
+
+[mitm]
+hostname = talk-asset.line-scdn.net
