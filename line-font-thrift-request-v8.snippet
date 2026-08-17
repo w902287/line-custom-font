@@ -1,0 +1,8 @@
+# LINE Premium Font Thrift 请求捕获 v8
+# 修正 :443；request-only，避免与响应规则冲突。
+
+[rewrite_local]
+^https?:\/\/(?:legy|legy-backup)\.line-apps\.com(?::443)?\/EXT\/talk\/asset-meta-server\/thrift\/fontService(?:\?.*)?$ url script-request-body https://raw.githubusercontent.com/w902287/line-custom-font/766b2a7/line-font-thrift-request-v8.js
+
+[mitm]
+hostname = legy.line-apps.com, legy-backup.line-apps.com
