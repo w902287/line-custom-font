@@ -13,11 +13,11 @@ function patch(src,a,b){const x=enc.encode(a),y=enc.encode(b);let n=0;for(let i=
 try{
  const selected=$prefs.valueForKey(KEY)||"ry",c=combos[selected]||combos.ry,src=body();
  const n1=patch(src,OLD1,c[2]),n2=patch(src,OLD2,c[3]);
- // Compact field 2 (i32): TTL 3600 = 15 a0 38; TTL 64 = 15 80 01. Same length.
- let ttl=0;for(let i=0;i<src.length-2;i++)if(src[i]===0x15&&src[i+1]===0xa0&&src[i+2]===0x38){src[i+1]=0x80;src[i+2]=0x01;ttl++;}
+ // Compact field 2 (i32): TTL 3600 = 15 a0 38; TTL 0 uses valid two-byte varint 80 00, preserving body length.
+ let ttl=0;for(let i=0;i<src.length-2;i++)if(src[i]===0x15&&src[i+1]===0xa0&&src[i+2]===0x38){src[i+1]=0x80;src[i+2]=0x00;ttl++;}
  const out=src.buffer.slice(src.byteOffset,src.byteOffset+src.byteLength);
- console.log(`[LINE-Font-Dual] combo=${selected} slot1=${n1} slot2=${n2} ttl=${ttl} bytes=${src.length}`);
- if(n1===1&&n2===1)$notify("LINE 雙欄字型摘要已更新",`${c[0]} ＋ ${c[1]}`,`白玉 ${n1}｜芫荽 ${n2}｜TTL 64 秒`);
+ console.log(`[LINE-Font-Dual] combo=${selected} slot1=${n1} slot2=${n2} ttl0=${ttl} bytes=${src.length}`);
+ if(n1===1&&n2===1)$notify("LINE 雙欄字型摘要已更新",`${c[0]} ＋ ${c[1]}`,`白玉 ${n1}｜芫荽 ${n2}｜TTL 0 即時刷新`);
  else $notify("LINE 雙欄字型清單未完整命中",`${c[0]} ＋ ${c[1]}`,`白玉 ${n1}｜芫荽 ${n2}｜響應 ${src.length} bytes`);
  $done({bodyBytes:out});
 }catch(e){console.log("[LINE-Font-Dual] meta error "+String(e));$done({});}

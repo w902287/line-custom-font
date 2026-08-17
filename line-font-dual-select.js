@@ -19,7 +19,7 @@ try{
     const changed=[];
     if(p.slot1!==c.slot1)changed.push(`白玉欄：${p.slot1} → ${c.slot1}`);
     if(p.slot2!==c.slot2)changed.push(`芫荽欄：${p.slot2} → ${c.slot2}`);
-    const action=changed.length?`約 64 秒後只刪除並重下載變動欄位：${changed.join("；")}`:"組合沒有改變，不需重新下載。";
+    const action=changed.length?`立即回 LINE：右上角 ⋯ → 刪除所有字型，重開字型頁；看到摘要更新通知後，重新下載白玉與芫荽兩欄。變動內容：${changed.join("；")}`:"組合沒有改變，不需重新下載。";
     console.log(`[LINE-Font-Dual] previous=${previous} selected=${selected} saved=${ok}`);
     $notify("LINE 雙欄字型已切換",c.title,action);
     $done({title:"切換完成",htmlMessage:`<p style="font-family:-apple-system;text-align:center;font-size:18px"><b>${c.title}</b><br><br>白玉書體 → ${c.slot1}<br>芫荽 → ${c.slot2}<br><br>${action}</p>`});
