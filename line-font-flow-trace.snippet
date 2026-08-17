@@ -1,0 +1,8 @@
+# LINE 字型流程追踪 v4（只记录 URL/响应头，不保存任何正文或 Cookie）
+# 开启后：完全关闭 LINE → 重开 → 进入字型页 → 下载一次。
+
+[rewrite_local]
+^https?:\/\/[^\/]*(?:line\.me|line-apps\.com|line-scdn\.net|line\.naver\.jp|naver\.jp)\/.* url script-response-header https://raw.githubusercontent.com/w902287/line-custom-font/e041519/line-font-flow-trace.js
+
+[mitm]
+hostname = *.line.me, *.line-apps.com, *.line-scdn.net, *.line.naver.jp, *.naver.jp
