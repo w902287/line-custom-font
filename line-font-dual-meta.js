@@ -3,10 +3,10 @@ const KEY="line.custom.font.combo";
 const OLD1="d44908eda3a66daee9c18253122059756016ee0ad8043b989f662ee8d608380e";
 const OLD2="7794013dd3564875be0fde9fe206ebcafcaec2456f42157f024d515d675f2aa5";
 const ROMANTIC="b02bbdd7d5cf1d229800ad31570295eeeb5b0dba8caf2eeef1f21583c4d63147";
-const NAIKAI="37047052f5eca6e751a496608ca4037041376158aa2c5930b73120dd84563587";
+const POPGOTHIC="2ec06ab2bbec6002e24cff35a267eb1a01f0ddc9a58db5edf60473092b23f7c8";
 const YOZAI="90898425c49d9ae260ad5c807609291c4713c92371e1ce3df158fbca43676cb0";
 const TAIPEI="7de371a1c7dc6a756525635fb177a87382daef04f6d737cc48c5b87db659a119";
-const combos={ry:["浪漫雅圓","Yozai Medium",ROMANTIC,YOZAI],rt:["浪漫雅圓","台北黑體 Bold",ROMANTIC,TAIPEI],ny:["內海字體 Bold","Yozai Medium",NAIKAI,YOZAI],nt:["內海字體 Bold","台北黑體 Bold",NAIKAI,TAIPEI]};
+const combos={ry:["浪漫雅圓","Yozai Medium",ROMANTIC,YOZAI],rt:["浪漫雅圓","台北黑體 Bold",ROMANTIC,TAIPEI],py:["Pop Gothic Bold","Yozai Medium",POPGOTHIC,YOZAI],pt:["Pop Gothic Bold","台北黑體 Bold",POPGOTHIC,TAIPEI]};
 const enc=new TextEncoder();
 function body(){const b=$response.bodyBytes;if(b instanceof ArrayBuffer)return new Uint8Array(b);if(b&&b.buffer instanceof ArrayBuffer)return new Uint8Array(b.buffer,b.byteOffset||0,b.byteLength);return enc.encode($response.body||"");}
 function patch(src,a,b){const x=enc.encode(a),y=enc.encode(b);let n=0;for(let i=0;i<=src.length-x.length;i++){let ok=true;for(let j=0;j<x.length;j++)if(src[i+j]!==x[j]){ok=false;break;}if(ok){src.set(y,i);n++;i+=x.length-1;}}return n;}
