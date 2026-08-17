@@ -1,0 +1,8 @@
+# LINE 字型 Control 0：官方原包逐位元不变＋捕获到的官方响应协议
+# 使用既有 Data/LINE-font-official-baseline.zip
+
+[rewrite_local]
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/.*\.zip(?:\?.*)?$ url script-echo-response https://raw.githubusercontent.com/w902287/line-custom-font/e1b5a42/line-font-control-0.js
+
+[mitm]
+hostname = talk-asset.line-scdn.net
