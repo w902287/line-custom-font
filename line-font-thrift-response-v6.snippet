@@ -1,0 +1,8 @@
+# LINE Premium Font Thrift 响应捕获 v6（修正显式 :443）
+# 仅捕获字体专用 RPC 响应；不匹配聊天、好友或其他 LINE API。
+
+[rewrite_local]
+^https?:\/\/(?:legy|legy-backup)\.line-apps\.com(?::443)?\/EXT\/talk\/asset-meta-server\/thrift\/fontService(?:\?.*)?$ url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/0afb61b/line-font-thrift-response-capture.js
+
+[mitm]
+hostname = legy.line-apps.com, legy-backup.line-apps.com
