@@ -1,0 +1,8 @@
+# LINE 字型 Control B：官方 TTF／ZIP 仅改时间戳＋官方响应协议
+# 使用现有 Data/LINE-font-control-A-zipmeta.zip，无需下载新 ZIP。
+
+[rewrite_local]
+^https?:\/\/talk-asset\.line-scdn\.net\/secure\/.*\.zip(?:\?.*)?$ url script-echo-response https://raw.githubusercontent.com/w902287/line-custom-font/f14bbcb/line-font-control-b.js
+
+[mitm]
+hostname = talk-asset.line-scdn.net
