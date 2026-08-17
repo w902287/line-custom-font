@@ -1,0 +1,9 @@
+# LINE 浪漫雅圆 v9：Thrift SHA-256 清单改写＋本地 ZIP 联动
+# Data 必须有：LINE-font-romantic-v8-unsigned.zip
+
+[rewrite_local]
+^https?:\/\/(?:legy|legy-backup)\.line-apps\.com(?::443)?\/EXT\/talk\/asset-meta-server\/thrift\/fontService(?:\?.*)?$ url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/b1ae35d/line-font-romantic-v9-meta.js
+^https?:\/\/talk-asset\.line-scdn\.net(?::443)?\/secure\/119ae2b9-ed0e-49ed-8b9b-a013918b81b7\/TT07-armochih32c90b5_md_scale\.zip(?:\?.*)?$ url script-echo-response https://raw.githubusercontent.com/w902287/line-custom-font/b1ae35d/line-font-romantic-v9-zip.js
+
+[mitm]
+hostname = legy.line-apps.com, legy-backup.line-apps.com, talk-asset.line-scdn.net
