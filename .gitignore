@@ -1,0 +1,9 @@
+# Keep font binaries and generated packages local only.
+*.zip
+*.ttf
+*.otf
+*.ttc
+*.otc
+*.woff
+*.woff2
+build/
