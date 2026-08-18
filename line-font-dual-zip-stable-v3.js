@@ -2,11 +2,11 @@
 const KEY="line.custom.font.combo";
 const files={
  romantic:{label:"浪漫雅圓",file:"LINE-font-romantic-v10-full.zip",size:5480381,md5:"95ba2a3e2720091ec49aaea44136bcd9"},
- popgothic:{label:"Pop Gothic Bold",file:"LINE-font-slot1-popgothic.zip",size:4870775,md5:"6c441f6d6be1aaf072e37587ffa4781b"},
+ sarasa:{label:"Sarasa Mono Slab TC",file:"LINE-font-slot1-sarasa-mono-slab-tc.zip",size:11763205,md5:"db7c145e3d001be1eae78e3e08c3e6dc"},
  yozai:{label:"Yozai Medium",file:"LINE-font-slot2-yozai.zip",size:9778405,md5:"6bb591b541a61b830026524783f2f5b0"},
  taipei:{label:"台北黑體 Bold",file:"LINE-font-slot2-taipei.zip",size:11214470,md5:"adf0d8e32ad1f90ea1e7b3cf4c208b5c"}
 };
-const combos={ry:["romantic","yozai"],rt:["romantic","taipei"],py:["popgothic","yozai"],pt:["popgothic","taipei"]};
+const combos={ry:["romantic","yozai"],rt:["romantic","taipei"],say:["sarasa","yozai"],sat:["sarasa","taipei"]};
 try{
  const selected=$prefs.valueForKey(KEY)||"ry",pair=combos[selected]||combos.ry;
  const slot=/Iansui-ForLINE/i.test($request.url)?2:1,item=files[pair[slot-1]],source=$iCloud.readFile(item.file);

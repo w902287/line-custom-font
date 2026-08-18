@@ -3,14 +3,14 @@ const KEY="line.custom.font.combo";
 const choices={
   ry:{title:"浪漫雅圓 ＋ Yozai Medium",slot1:"浪漫雅圓",slot2:"Yozai Medium"},
   rt:{title:"浪漫雅圓 ＋ 台北黑體 Bold",slot1:"浪漫雅圓",slot2:"台北黑體 Bold"},
-  py:{title:"Pop Gothic Bold ＋ Yozai Medium",slot1:"Pop Gothic Bold",slot2:"Yozai Medium"},
-  pt:{title:"Pop Gothic Bold ＋ 台北黑體 Bold",slot1:"Pop Gothic Bold",slot2:"台北黑體 Bold"}
+  say:{title:"Sarasa Mono Slab TC ＋ Yozai Medium",slot1:"Sarasa Mono Slab TC",slot2:"Yozai Medium"},
+  sat:{title:"Sarasa Mono Slab TC ＋ 台北黑體 Bold",slot1:"Sarasa Mono Slab TC",slot2:"台北黑體 Bold"}
 };
 try{
   const env=(typeof $environment!=="undefined"&&$environment)||{};
   const source=env.sourcePath||"";
   const direct=env.variables&&env.variables.combo;
-  const m=source.match(/(?:#|&)combo=(ry|rt|py|pt)(?:&|$)/);
+  const m=source.match(/[?&#]combo=([a-z0-9_-]+)/i);
   const selected=direct||(m?m[1]:null);
   if(!selected||!choices[selected]){
     const current=$prefs.valueForKey(KEY)||"ry",c=choices[current];
