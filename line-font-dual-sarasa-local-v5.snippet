@@ -9,8 +9,8 @@
 # 必須停用或刪除所有舊 v9/v10/v2 字型重寫模組，只啟用本模組。
 
 [rewrite_local]
-^https?:\/\/(?:legy|legy-backup)\.line-apps\.com(?::443)?\/EXT\/talk\/asset-meta-server\/thrift\/fontService(?:\?.*)?$ url script-response-body https://raw.githubusercontent.com/w902287/line-custom-font/f68371e/line-font-dual-meta-stable-v3.js
-^https?:\/\/talk-asset\.line-scdn\.net(?::443)?\/secure\/(?:119ae2b9-ed0e-49ed-8b9b-a013918b81b7\/TT07-armochih32c90b5_md_scale\.zip|39ec0b51-c99e-4273-8936-99aff142b47d\/Iansui-ForLINE%20(?:\(1\)|%281%29)\.zip)(?:\?.*)?$ url script-echo-response https://raw.githubusercontent.com/w902287/line-custom-font/f68371e/line-font-dual-zip-stable-v3.js
+^https?:\/\/(?:legy|legy-backup)\.line-apps\.com(?::443)?\/EXT\/talk\/asset-meta-server\/thrift\/fontService(?:\?.*)?$ url script-response-body https://cdn.jsdelivr.net/gh/w902287/line-custom-font@f68371e/line-font-dual-meta-stable-v3.js
+^https?:\/\/talk-asset\.line-scdn\.net(?::443)?\/secure\/(?:119ae2b9-ed0e-49ed-8b9b-a013918b81b7\/TT07-armochih32c90b5_md_scale\.zip|39ec0b51-c99e-4273-8936-99aff142b47d\/Iansui-ForLINE%20(?:\(1\)|%281%29)\.zip)(?:\?.*)?$ url script-echo-response https://cdn.jsdelivr.net/gh/w902287/line-custom-font@f68371e/line-font-dual-zip-stable-v3.js
 
 [mitm]
 hostname = legy.line-apps.com, legy-backup.line-apps.com, talk-asset.line-scdn.net
