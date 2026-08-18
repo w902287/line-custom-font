@@ -1,0 +1,16 @@
+# LINE 雙欄字型選擇器 v6（Sarasa Mono TC SemiBold）
+# Sarasa 已由 Mono Slab TC Regular 更換為 Mono TC SemiBold。
+# 元資料 TTL 固定為一年；ZIP 快取 300 秒。
+# Quantumult X/Data 必須保留四個 ZIP：
+# LINE-font-romantic-v10-full.zip
+# LINE-font-slot1-sarasa-mono-tc-semibold.zip
+# LINE-font-slot2-yozai.zip
+# LINE-font-slot2-taipei.zip
+# 必須停用或刪除所有舊字型重寫模組，只啟用本模組。
+
+[rewrite_local]
+^https?:\/\/(?:legy|legy-backup)\.line-apps\.com(?::443)?\/EXT\/talk\/asset-meta-server\/thrift\/fontService(?:\?.*)?$ url script-response-body https://cdn.jsdelivr.net/gh/w902287/line-custom-font@04b374b/line-font-dual-meta-stable-v3.js
+^https?:\/\/talk-asset\.line-scdn\.net(?::443)?\/secure\/(?:119ae2b9-ed0e-49ed-8b9b-a013918b81b7\/TT07-armochih32c90b5_md_scale\.zip|39ec0b51-c99e-4273-8936-99aff142b47d\/Iansui-ForLINE%20(?:\(1\)|%281%29)\.zip)(?:\?.*)?$ url script-echo-response https://cdn.jsdelivr.net/gh/w902287/line-custom-font@04b374b/line-font-dual-zip-stable-v3.js
+
+[mitm]
+hostname = legy.line-apps.com, legy-backup.line-apps.com, talk-asset.line-scdn.net
