@@ -5,8 +5,8 @@ const OLD2="7794013dd3564875be0fde9fe206ebcafcaec2456f42157f024d515d675f2aa5";
 const ROMANTIC="b02bbdd7d5cf1d229800ad31570295eeeb5b0dba8caf2eeef1f21583c4d63147";
 const YOZAI="90898425c49d9ae260ad5c807609291c4713c92371e1ce3df158fbca43676cb0";
 const TAIPEI="7de371a1c7dc6a756525635fb177a87382daef04f6d737cc48c5b87db659a119";
-const SARASA="d9690202341025e5af04f26511de746b5b96aab927506d12e7b9669abe6c5916";
-const combos={ry:["浪漫雅圓","Yozai Medium",ROMANTIC,YOZAI],rt:["浪漫雅圓","台北黑體 Bold",ROMANTIC,TAIPEI],say:["Sarasa Mono Slab TC","Yozai Medium",SARASA,YOZAI],sat:["Sarasa Mono Slab TC","台北黑體 Bold",SARASA,TAIPEI]};
+const SARASA="fcea6ea21685e1ccfe4e42b301940c038970aa844b7da232c0bf1fb05b559469";
+const combos={ry:["浪漫雅圓","Yozai Medium",ROMANTIC,YOZAI],rt:["浪漫雅圓","台北黑體 Bold",ROMANTIC,TAIPEI],say:["Sarasa Mono TC SemiBold","Yozai Medium",SARASA,YOZAI],sat:["Sarasa Mono TC SemiBold","台北黑體 Bold",SARASA,TAIPEI]};
 const enc=new TextEncoder();
 function body(){const b=$response.bodyBytes;if(b instanceof ArrayBuffer)return new Uint8Array(b);if(b&&b.buffer instanceof ArrayBuffer)return new Uint8Array(b.buffer,b.byteOffset||0,b.byteLength);return enc.encode($response.body||"");}
 function patch(src,a,b){const x=enc.encode(a),y=enc.encode(b);let n=0;for(let i=0;i<=src.length-x.length;i++){let ok=true;for(let j=0;j<x.length;j++)if(src[i+j]!==x[j]){ok=false;break;}if(ok){src.set(y,i);n++;i+=x.length-1;}}return n;}

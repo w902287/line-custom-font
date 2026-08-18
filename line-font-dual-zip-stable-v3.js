@@ -2,7 +2,7 @@
 const KEY="line.custom.font.combo";
 const files={
  romantic:{label:"浪漫雅圓",file:"LINE-font-romantic-v10-full.zip",size:5480381,md5:"95ba2a3e2720091ec49aaea44136bcd9"},
- sarasa:{label:"Sarasa Mono Slab TC",file:"LINE-font-slot1-sarasa-mono-slab-tc.zip",size:11763205,md5:"db7c145e3d001be1eae78e3e08c3e6dc"},
+ sarasa:{label:"Sarasa Mono TC SemiBold",file:"LINE-font-slot1-sarasa-mono-tc-semibold.zip",size:11772783,md5:"662f26ea0c74ee76b98cf39291dd8b9f"},
  yozai:{label:"Yozai Medium",file:"LINE-font-slot2-yozai.zip",size:9778405,md5:"6bb591b541a61b830026524783f2f5b0"},
  taipei:{label:"台北黑體 Bold",file:"LINE-font-slot2-taipei.zip",size:11214470,md5:"adf0d8e32ad1f90ea1e7b3cf4c208b5c"}
 };

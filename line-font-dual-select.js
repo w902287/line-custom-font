@@ -3,8 +3,8 @@ const KEY="line.custom.font.combo";
 const choices={
   ry:{title:"浪漫雅圓 ＋ Yozai Medium",slot1:"浪漫雅圓",slot2:"Yozai Medium"},
   rt:{title:"浪漫雅圓 ＋ 台北黑體 Bold",slot1:"浪漫雅圓",slot2:"台北黑體 Bold"},
-  say:{title:"Sarasa Mono Slab TC ＋ Yozai Medium",slot1:"Sarasa Mono Slab TC",slot2:"Yozai Medium"},
-  sat:{title:"Sarasa Mono Slab TC ＋ 台北黑體 Bold",slot1:"Sarasa Mono Slab TC",slot2:"台北黑體 Bold"}
+  say:{title:"Sarasa Mono TC SemiBold ＋ Yozai Medium",slot1:"Sarasa Mono TC SemiBold",slot2:"Yozai Medium"},
+  sat:{title:"Sarasa Mono TC SemiBold ＋ 台北黑體 Bold",slot1:"Sarasa Mono TC SemiBold",slot2:"台北黑體 Bold"}
 };
 try{
   const env=(typeof $environment!=="undefined"&&$environment)||{};
