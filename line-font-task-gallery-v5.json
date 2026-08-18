@@ -2,9 +2,9 @@
   "name": "LINE 雙欄字型選擇器 v5（Sarasa）",
   "description": "已移除 Pop Gothic 與 TASA。四組為浪漫雅圓/Sarasa Mono Slab TC × Yozai/台北黑體。",
   "task": [
-    "0 0 * * * https://raw.githubusercontent.com/w902287/line-custom-font/f68371e/line-font-dual-select.js#combo=ry, tag=① 浪漫雅圓 ＋ Yozai, img-url=textformat.alt.system, enabled=false",
-    "0 0 * * * https://raw.githubusercontent.com/w902287/line-custom-font/f68371e/line-font-dual-select.js#combo=rt, tag=② 浪漫雅圓 ＋ 台北黑體, img-url=textformat.alt.system, enabled=false",
-    "0 0 * * * https://raw.githubusercontent.com/w902287/line-custom-font/f68371e/line-font-dual-select.js#combo=say, tag=③ Sarasa ＋ Yozai, img-url=textformat.alt.system, enabled=false",
-    "0 0 * * * https://raw.githubusercontent.com/w902287/line-custom-font/f68371e/line-font-dual-select.js#combo=sat, tag=④ Sarasa ＋ 台北黑體, img-url=textformat.alt.system, enabled=false"
+    {"config":"0 0 * * * https://raw.githubusercontent.com/w902287/line-custom-font/f68371e/line-font-dual-select.js#combo=ry, tag=① 浪漫雅圓 ＋ Yozai, img-url=textformat.alt.system, enabled=false"},
+    {"config":"0 0 * * * https://raw.githubusercontent.com/w902287/line-custom-font/f68371e/line-font-dual-select.js#combo=rt, tag=② 浪漫雅圓 ＋ 台北黑體, img-url=textformat.alt.system, enabled=false"},
+    {"config":"0 0 * * * https://raw.githubusercontent.com/w902287/line-custom-font/f68371e/line-font-dual-select.js#combo=say, tag=③ Sarasa ＋ Yozai, img-url=textformat.alt.system, enabled=false"},
+    {"config":"0 0 * * * https://raw.githubusercontent.com/w902287/line-custom-font/f68371e/line-font-dual-select.js#combo=sat, tag=④ Sarasa ＋ 台北黑體, img-url=textformat.alt.system, enabled=false"}
   ]
 }
